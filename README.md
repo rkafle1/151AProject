@@ -24,3 +24,11 @@ The dataset is composed of the following labels and image counts:
   - Vegetation: 436
 
 The above labelling may be further subdivided as required, i.e., Transparent Plastic, Opaque Plastic.
+
+
+
+# Preprocessing
+- checking for outliers(any larger images-> scale it down to have uniform sizes, any black and white images)
+- In our data, there are pictures of trash labeled as miscellaneous. Potential preprocessing steps could be to use data transformation, normalization and standardization methods and functions to bettern train our model and improve its accuracy. 
+- recategorizing the data as recyclable, compostable and landfill
+- 
