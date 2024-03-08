@@ -1,4 +1,13 @@
 # Compost, Recycle, Trash Categorizer (Tentative Name)
+## Milestone 4: Model 2 and Evaluation
+<a target="_blank" href="https://colab.research.google.com/drive/14G-zQT8ykw3QGHTf5Xi_76lK65pBPU1h?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+### Model Evaluation
+### Future Model
+### Conclusion
+
 ## Milestone 3: Preprocessing 
 <a target="_blank" href="https://colab.research.google.com/drive/1KEcvWCYkV52NPyeS-_5xmDSmxJIV3ke8?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
