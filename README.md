@@ -5,7 +5,12 @@
 </a>
 
 ### Model Evaluation
-### Future Model
+#### Data, Labels and Loss function Evaluation:
+There were no changes made to the data, labels, and loss function as they were sufficient.
+#### Training vs Test Error Comparison
+#### Model Fit
+#### Results of Hyper Parameter Tuning
+### Next Model
 ### Conclusion
 
 ## Milestone 3: Preprocessing 
