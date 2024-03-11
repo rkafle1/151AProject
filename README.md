@@ -5,13 +5,16 @@
 </a>
 
 ### Model Evaluation
-#### Data, Labels and Loss function Evaluation:
-There were no changes made to the data, labels, and loss function as they were sufficient.
-#### Training vs Test Error Comparison
-#### Model Fit
-#### Results of Hyper Parameter Tuning
+There were no changes made to the data, labels, and loss function as they were sufficient for our 2nd model.
+The 2nd model had an accuracy of about 62% for testing accuracy and a 65% accuracy in predicting the training data. For the validation sample, it had an accuracy of about 66% in predicting the validation targets. Given that the accuracy of the testing dataset is slightly less than the accuracy of the training and validation dataset, this suggests that the model slightly overfits. 
+Compared to our first model, the testing accuracy is slightly lower than the 1st model's suggesting that the first model was slighly better at predicting the trash type. In the first model, it was found that the data didn't overfit while the second does sligthly. 
+As for error, we looked at the log loss which inicated that the test loss was larger than the training and validation loss suggesting that there is a slight overfitting going on in the model.
+### Results of Hyper Parameter Tuning
+We did hyperparameter tuning to find the optimal parameters for the model. Through this, we were able to get better parameters for our deep neural network to better predict the trash type. This allowed us to know the best number of units and activation functions for each layer. It also let us see the best learning rate and loss function. 
 ### Next Model
+For the next model, we are thinking of 
 ### Conclusion
+Overall, for image data, a deep neural network isn't the best type of model to clasify as seen by how the testing accuracy was higher in our first CCN model as opposed to our second model which is a deep neural network. This suggests that adding some convolution layers could be helpfull in better predicting the trash type. 
 
 ## Milestone 3: Preprocessing 
 <a target="_blank" href="https://colab.research.google.com/drive/1KEcvWCYkV52NPyeS-_5xmDSmxJIV3ke8?usp=sharing">
