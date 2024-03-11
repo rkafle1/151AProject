@@ -1,4 +1,10 @@
 # Compost, Recycle, Trash Categorizer (Tentative Name)
+## Model 3 and Final Submission
+### Methods section 
+(this section will include the exploration results, preprocessing steps, models chosen in the order they were executed. Parameters chosen. Please make sub-sections for every step. i.e Data Exploration, Preprocessing, Model 1, Model 2, Model 3.
+### Results section:
+### Discussion section: 
+### Conclusion
 ## Milestone 4: Model 2 and Evaluation
 <a target="_blank" href="https://colab.research.google.com/drive/11Fny_6xKCY2_ddIDxwC6iGdPsJowVTVW?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
