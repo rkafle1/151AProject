@@ -12,7 +12,7 @@ As for error, we looked at the log loss which inicated that the test loss was la
 ### Results of Hyper Parameter Tuning
 We did hyperparameter tuning to find the optimal parameters for the model. Through this, we were able to get better parameters for our deep neural network to better predict the trash type. This allowed us to know the best number of units and activation functions for each layer. It also let us see the best learning rate and loss function. 
 ### Next Model
-For the next model, we are thinking of 
+For the next model, we are thinking of using a k-nearest neighbors model that examines the rgb distances for each pixel. We chose this model since it allows us to group images that have similar features and classify them as one of the three trash types.
 ### Conclusion
 Overall, for image data, a deep neural network isn't the best type of model to clasify as seen by how the testing accuracy was higher in our first CCN model as opposed to our second model which is a deep neural network. This suggests that adding some convolution layers could be helpfull in better predicting the trash type. 
 
