@@ -40,7 +40,7 @@ No exploration of results is done here. This is mainly just a summary of your re
 ...
 
 ### Model 3 K-Nearest Neighbors
-Our model performed with an accuracy of 68% on the testing set and 69% on the validation set with k=11 neighbors.
+Our model performed with an accuracy of 70% on the testing set and 69% on the validation set with k=11 neighbors.
 #### Testing results:
 
 ![image](https://github.com/rkafle1/151AProject/assets/88344031/6562151a-a943-4f89-bd37-84d0e637d572)
