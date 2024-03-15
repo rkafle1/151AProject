@@ -176,7 +176,7 @@ This is what a sized down greyscale image looks like:
 
 ![image](https://github.com/rkafle1/151AProject/blob/main/images/2greyscalesd.png)
 ### Model 1 Convolutional Neural Network on Grayscale
-...
+![image](images/1confusion.png)
 
 ### Model 2 Convolutional Neural Network on RGB
 ![image](images/2confusion.png)
