@@ -140,17 +140,17 @@ Vegetation: 436
 
 This is displayed in this figure:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/1numpics.png)
+![image](https://github.com/rkafle1/151AProject/blob/main/images/1numpics.png)
 
 This was our results for the plotting the image sizes:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/realwaste-main/RealWaste/1imagesize.png)
+![image](https://github.com/rkafle1/151AProject/blob/main/images/1imagesize.png)
 
 Clearly, the image sizes are uniform. 
 
 For the color distribution among different trash categories this is what we found:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/1colordist.png)
+![image](https://github.com/rkafle1/151AProject/blob/main/images/1colordist.png)
 
 Data Quality and Anomalies:
 - Outlier Detection: No outliers, such as unusually large or small images, have been detected in the dataset. Additionally, there are no black and white images present.
@@ -162,7 +162,7 @@ Overall, the data sizes are uniform and there is a good amount of images per cat
 
 For each category we displayed some of the images as shown by this example:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/1imagegrid.png)
+![image](https://github.com/rkafle1/151AProject/blob/main/images/1imagegrid.png)
 
 Refer to our notebook to see the whole figure.
 
