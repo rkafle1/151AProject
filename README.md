@@ -144,7 +144,7 @@ This is displayed in this figure:
 
 This was our results for the plotting the image sizes:
 
-![image]()
+![image](https://github.com/rkafle1/151AProject/blob/main/realwaste-main/RealWaste/1imagesize.png)
 
 Clearly, the image sizes are uniform. 
 
