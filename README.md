@@ -172,6 +172,8 @@ We got this graph:
 
 ![image](https://github.com/rkafle1/151AProject/blob/main/images/2_3_type_wastes_counts.png)
 
+As seen in the figure, there are a lot more images that are recycling compared to the number of images for other categories.
+
 This is what a sized down greyscale image looks like:
 
 ![image](https://github.com/rkafle1/151AProject/blob/main/images/2greyscalesd.png)
