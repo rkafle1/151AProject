@@ -22,6 +22,10 @@ We also looked into whether their were any outliers in image size and label cons
 Our final step was displaying some randomly chosen images from each trash category and displaying them.
 
 ### Preprocessing
+<a target="_blank" href="https://colab.research.google.com/drive/1KEcvWCYkV52NPyeS-_5xmDSmxJIV3ke8?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 We started by grouping the trash categories we were given via the dataset and grouping them as recycle, compost, or landfill. This grouped the images into 3 groups. 
 
 To group these categories: Trash, recycle, compost guide: https://www.sandiego.gov/sites/default/files/cowr-guide-english.pdf 
@@ -34,7 +38,35 @@ Other preprocessing we implemented was gray scaling and sizing down images befor
 
 
 ### Model 1 Convolutional Neural Network on Grayscale
-...
+<a target="_blank" href="https://colab.research.google.com/drive/1KEcvWCYkV52NPyeS-_5xmDSmxJIV3ke8?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+For our first model, we decided to preprocess the pictures by changing the image sizes to be 180 x 180 and by converting the pictures into grayscale images. After preprocessing, we built the model, creating a CCN that takes in an input shape of (180, 180, 1) and passes it through 3 convolution layers and dense layers. Here is the code for the model construction: 
+```
+model = models.Sequential()
+model.add(layers.Resizing(180, 180, interpolation='bilinear', input_shape=(180, 180, 1)))
+model.add(layers.Rescaling(1./255))
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(128, (3, 3), activation='relu'))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(256, (3, 3), activation='relu'))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Flatten())
+model.add(layers.Dense(128, activation='relu'))
+model.add(layers.Dense(64, activation='relu'))
+model.add(layers.Dense(3, activation='softmax'))
+
+```
+We used the adam optimizer and  the categorical cross entropy loss function. 
+
+The next step was splitting the data into training and testing datasets which we did by splitting the preprocessed images into an 80-20 training and testing split.
+
+We then trained our model with the training data set for 1 epoch and batch size of 100. 
+
+To test the model, we predicted the testing data and thresholded values to account for the one hot encoding. We then compared the predicted and actual for both the training and testing data. This gave us an accuracy and a sense of whether our model overfit or underfit. 
+
 
 ### Model 2 Convolutional Neural Network on RGB
 ...
