@@ -114,9 +114,7 @@ The model was trained using the training set and validated using the validation 
 </a>
 
 Our K-nearest neighbors model examines the RGB distances for each pixel. This model allows us to group images that have similar features and classify them as one of the three trash types. For the model, we preprocess image input into a flattened one-dimensional vector containing each original pixel's respective RGB values, so the dataframe contains observations of our images in which the features are these pixel values. The images will be classified based on the composition of RGB values, with images of similar colors being more related. Our chosen parameter was k=11 neighbors as observed from multiple trials with different k values. In order to find a good k value, we ran multiple trials on the testing set to find the best accuracy of the first 30 k values.
-#### Trials on testing set:
 
-![image](https://github.com/rkafle1/151AProject/assets/88344031/b5399723-94a3-432b-b4cd-2550f5e3794b)
 
 ## Results
 This will include the results from the methods listed above (C). You will have figures here about your results as well.
@@ -130,6 +128,8 @@ No exploration of results is done here. This is mainly just a summary of your re
 
 ### Model 3 K-Nearest Neighbors
 Our model performed with an accuracy of 70% on the testing set and 69% on the validation set with k=11 neighbors.
+#### Trials on testing set:
+![image](https://github.com/rkafle1/151AProject/assets/88344031/b5399723-94a3-432b-b4cd-2550f5e3794b)
 #### Testing results:
 
 ![image](https://github.com/rkafle1/151AProject/assets/88344031/6562151a-a943-4f89-bd37-84d0e637d572)
