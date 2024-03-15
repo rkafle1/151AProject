@@ -22,7 +22,16 @@ We also looked into whether their were any outliers in image size and label cons
 Our final step was displaying some randomly chosen images from each trash category and displaying them.
 
 ### Preprocessing
-...
+We started by grouping the trash categories we were given via the dataset and grouping them as recycle, compost, or landfill. This grouped the images into 3 groups. 
+
+To group these categories: Trash, recycle, compost guide: https://www.sandiego.gov/sites/default/files/cowr-guide-english.pdf 
+
+
+The preprocessing implementation is shown before every colab moving forward. To refer to the code, look at the model 1 - 3 notebooks.
+
+
+Other preprocessing we implemented was gray scaling and sizing down images before passing them into the model.
+
 
 ### Model 1 Convolutional Neural Network on Grayscale
 ...
