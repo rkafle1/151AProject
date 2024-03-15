@@ -19,7 +19,7 @@ The main goal was seeing what images we had and what their layout/size was. We f
 
 We also looked into whether their were any outliers in image size and label consistency. 
 
-Our final step was coming up with potential preprocessing steps for the next milestone.
+Our final step was displaying some randomly chosen images from each trash category and displaying them.
 
 ### Preprocessing
 ...
