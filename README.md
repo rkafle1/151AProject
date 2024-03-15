@@ -170,7 +170,7 @@ Refer to our notebook to see the whole figure.
 Once we grouped the data as recycle, compost, and landfill we graphed the number of images per category.
 We got this graph:
 
-![image]()
+![image](https://github.com/rkafle1/151AProject/blob/main/images/2_3_type_wastes_counts.png)
 
 This is what a sized down greyscale image looks like:
 
