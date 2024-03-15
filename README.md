@@ -4,9 +4,6 @@ Identifying whether trash can be recycled or composted can be a hassle as the st
 
 
 ## Methods
-(this section will include the exploration results, preprocessing steps, models chosen in the order they were executed. Parameters chosen. Please make sub-sections for every step. i.e Data Exploration, Preprocessing, Model 1, Model 2, Model 3.
-(Please make sub-sections for every step. i.e Data Exploration, Preprocessing, Model 1, Model 2, Model 3)
-Note: A methods section does not include any why. the reason why will be in the discussion section. This is just a summary of your methods
 
 ### Data Exploration
 <a target="_blank" href="https://colab.research.google.com/drive/1ppVIFZKg99gVINq3GeW3XbGLlXQuLOnY?usp=sharing">
@@ -119,6 +116,33 @@ Our K-nearest neighbors model examines the RGB distances for each pixel. This mo
 ## Results
 This will include the results from the methods listed above (C). You will have figures here about your results as well.
 No exploration of results is done here. This is mainly just a summary of your results. The sub-sections will be the same as the sections in your methods section.
+
+### Data Exploration
+The dataset is composed of the following labels and image counts:
+
+Cardboard: 461
+
+Food Organics: 411
+
+Glass: 420
+
+Metal: 790
+
+Miscellaneous Trash: 495
+
+Paper: 500
+
+Plastic: 921
+
+Textile Trash: 318
+
+Vegetation: 436
+
+This is displayed in this figure:
+
+![image](
+
+### Preprocessing
 
 ### Model 1 Convolutional Neural Network on Grayscale
 ...
