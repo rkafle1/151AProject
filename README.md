@@ -1,12 +1,13 @@
 # Compost, Recycle, Trash Categorizer
 ## Introduction
-- Introduction of your project. Why chosen? why is it cool? General/Broader impact of having a good predictive mode. i.e. why is this important?
-- Figures (of your choosing to help with the narration of your story) with legends (similar to a scientific paper) For reference you search machine learning and your model in google scholar for reference examples.
+Identifying whether trash can be recycled or composted can be a hassle as the state and material of the trash dictates what you can do with it. The goal of our project is to reduce this stress, and be able to classify an image of trash as recyclable, compostable, or landfill. By creating this model, clear images of trash can be classified to help us ensure we are disposing of waste properly and improving the environment. We chose this project due to its potential environmental impact by facilitating proper waste management practices. Having an accurate predictive model can assist in automating the sorting process, leading to more efficient recycling and waste distinction efforts. Additionally, the model can contribute to reducing contamination in recycling systems and promote sustainable practice.
+
 
 ## Methods
 (this section will include the exploration results, preprocessing steps, models chosen in the order they were executed. Parameters chosen. Please make sub-sections for every step. i.e Data Exploration, Preprocessing, Model 1, Model 2, Model 3.
 (Please make sub-sections for every step. i.e Data Exploration, Preprocessing, Model 1, Model 2, Model 3)
 Note: A methods section does not include any why. the reason why will be in the discussion section. This is just a summary of your methods
+
 ### Data Exploration
 ...
 
