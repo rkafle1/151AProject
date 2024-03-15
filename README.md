@@ -69,7 +69,44 @@ To test the model, we predicted the testing data and thresholded values to accou
 
 
 ### Model 2 Convolutional Neural Network on RGB
-...
+<a target="_blank" href="https://colab.research.google.com/drive/11Fny_6xKCY2_ddIDxwC6iGdPsJowVTVW?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+Similar to the first model, we started by preprocessing our images, sizing them down to 180 by 180 and gray scaling them. 
+
+Next we split the dataset into training, testing, and validation sets with a split of 90-5-5. 
+
+Then we built the model by creating a DNN model that took in the images and flattened them so that they could be passed through the dense layers. Hyperparameter tuning was used to get the optimal parameters in the model . With the tuned parameters, the model was constructed as this:
+```
+model = models.Sequential()
+  # preprocessing layers
+  # model.add(layers.Resizing(180, 180, interpolation='bilinear', input_shape=(180, 180, 1)))
+  # model.add(layers.Rescaling(1./255))
+model.add(layers.Flatten(input_shape=(180, 180, 1)))
+  # deep neural network layers
+model.add(layers.Dense(units=481,
+              activation='relu'))
+model.add(layers.Dense(units=257,
+              activation='sigmoid'))
+model.add(layers.Dense(units=321,
+              activation='softmax'))
+model.add(layers.Dense(units=65,
+              # Tune the activation function to use.
+              activation='softmax'))
+model.add(layers.Dense(units=449,
+              # Tune the activation function to use.
+              activation='tanh'))
+model.add(layers.Dense(units=193,
+              # Tune the activation function to use.
+              activation='tanh'))
+model.add(layers.Dense(3, activation='sigmoid'))  # Assuming 3 classes
+
+```
+The optimizer was set to be SGD and the loss function was set to categorical_crossentropy.
+
+The model was trained using the training set and validated using the validation set. Then all 3 sets of data: training, validation, and testing, were used to generate predictions. Their accuracies and other metrics on the classification report were used to evaluate whether the model was overfitting or underfitting. 
+
 
 ### Model 3 K-Nearest Neighbors
 <a target="_blank" href="https://colab.research.google.com/drive/1D1gvBfgVLAjMIjJTO7Bi0nL5cj_D9U8x?usp=sharing">
