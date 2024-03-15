@@ -9,7 +9,17 @@ Identifying whether trash can be recycled or composted can be a hassle as the st
 Note: A methods section does not include any why. the reason why will be in the discussion section. This is just a summary of your methods
 
 ### Data Exploration
-...
+<a target="_blank" href="https://colab.research.google.com/drive/1ppVIFZKg99gVINq3GeW3XbGLlXQuLOnY?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+The RealWaste dataset comprises images of waste items collected from the Whyte's Gully Waste and Resource Recovery facility in Wollongong NSW, Australia.
+
+The main goal was seeing what images we had and what their layout/size was. We first began by plotting the image sizes. Then we looked into the color distribution of different categories of trash the data set provided. Additionally, we looked into the number of images per each trash type. 
+
+We also looked into whether their were any outliers in image size and label consistency. 
+
+Our final step was coming up with potential preprocessing steps for the next milestone.
 
 ### Preprocessing
 ...
