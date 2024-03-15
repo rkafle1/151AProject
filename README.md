@@ -179,7 +179,7 @@ This is what a sized down greyscale image looks like:
 ...
 
 ### Model 2 Convolutional Neural Network on RGB
-![image](images/3confusion.png)
+![image](images/2confusion.png)
 
 ### Model 3 K-Nearest Neighbors
 Our model performed with an accuracy of 70% on the testing set and 69% on the validation set with k=11 neighbors.
