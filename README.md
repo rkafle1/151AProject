@@ -140,7 +140,31 @@ Vegetation: 436
 
 This is displayed in this figure:
 
-![image](
+![image](https://github.com/rkafle1/151AProject/blob/main/1numpics.png)
+
+This was our results for the plotting the image sizes:
+
+![image]()
+
+Clearly, the image sizes are uniform. 
+
+For the color distribution among different trash categories this is what we found:
+
+![image](https://github.com/rkafle1/151AProject/blob/main/1colordist.png)
+
+Data Quality and Anomalies:
+- Outlier Detection: No outliers, such as unusually large or small images, have been detected in the dataset. Additionally, there are no black and white images present.
+- Label Consistency: The labeling of waste categories appears to be consistent across the dataset, ensuring accuracy in classification tasks.
+
+We found that potential preprocessing steps could be to use data transformation, normalization, and standardization methods and functions to better train our model to improve its accuracy.
+
+Overall, the data sizes are uniform and there is a good amount of images per category.
+
+For each category we displayed some of the images as shown by this example:
+
+![image](https://github.com/rkafle1/151AProject/blob/main/1imagegrid.png)
+
+Refer to our notebook to see the whole figure.
 
 ### Preprocessing
 
