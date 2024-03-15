@@ -167,7 +167,14 @@ For each category we displayed some of the images as shown by this example:
 Refer to our notebook to see the whole figure.
 
 ### Preprocessing
+Once we grouped the data as recycle, compost, and landfill we graphed the number of images per category.
+We got this graph:
 
+![image]()
+
+This is what a sized down greyscale image looks like:
+
+![image]()
 ### Model 1 Convolutional Neural Network on Grayscale
 ...
 
