@@ -74,7 +74,7 @@ Similar to the first model, we started by preprocessing our images, sizing them 
 
 Next we split the dataset into training, testing, and validation sets with a split of 90-5-5. 
 
-Then we built the model by creating a DNN model that took in the images and flattened them so that they could be passed through the dense layers. Hyperparameter tuning was used to get the optimal parameters in the model . With the tuned parameters, the model was constructed as this:
+Then we built the model by creating a DNN model that took in the images and flattened them so that they could be passed through the dense layers. Hyperparameter tuning was used to get the optimal parameters in the model. With the tuned parameters, the model was constructed as this:
 ```
 model = models.Sequential()
   # preprocessing layers
@@ -142,15 +142,21 @@ This is displayed in this figure:
 
 ![image](https://github.com/rkafle1/151AProject/blob/main/images/1numpics.png)
 
+The x-axis represents the types of waste that we have images of. The y-axis is the count of the amount of pictures that are categorized as that type of trash.
+
 This was our results for the plotting the image sizes:
 
 ![image](https://github.com/rkafle1/151AProject/blob/main/images/1imagesize.png)
+
+In the above visualization, we have the image size’s width as the x-axis and its height as the y-axis.
 
 Clearly, the image sizes are uniform. 
 
 For the color distribution among different trash categories this is what we found:
 
 ![image](https://github.com/rkafle1/151AProject/blob/main/images/1colordist.png)
+
+Our line graphs plots the RGB value of the image on the x-axis and its respective normalized frequency on the y-axis.
 
 Data Quality and Anomalies:
 - Outlier Detection: No outliers, such as unusually large or small images, have been detected in the dataset. Additionally, there are no black and white images present.
@@ -167,8 +173,7 @@ For each category we displayed some of the images as shown by this example:
 Refer to our notebook to see the whole figure.
 
 ### Preprocessing
-Once we grouped the data as recycle, compost, and landfill we graphed the number of images per category.
-We got this graph:
+Once we grouped the data as recycle, compost, and landfill we graphed the number of images per category. We used a bar graph with the the type of waste as the x-axis and the number of pictures as the y-axis, and got the following graph:
 
 ![image](https://github.com/rkafle1/151AProject/blob/main/images/2_3_type_wastes_counts.png)
 
@@ -187,6 +192,8 @@ This is what a sized down greyscale image looks like:
 Our model performed with an accuracy of 70% on the testing set and 69% on the validation set with k=11 neighbors.
 #### Trials on testing set:
 ![image](https://github.com/rkafle1/151AProject/assets/88344031/b5399723-94a3-432b-b4cd-2550f5e3794b)
+
+We plotted the accuracy for each value of k on a line graph, with the value of k as the x-axis and the accuracy on the y-axis.
 #### Testing results:
 
 ![image](https://github.com/rkafle1/151AProject/assets/88344031/6562151a-a943-4f89-bd37-84d0e637d572)
