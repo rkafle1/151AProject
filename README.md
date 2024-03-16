@@ -342,13 +342,13 @@ Overall, we believe that using k-nearest neighbors as our algorithm will generat
 
 - Richa Kafle: Writer/Coder: Helped write readme for the milestones and helped write the models.
 
-- Brandon Reponte: Implemented the 3rd model, K-nearest neighbors, for image classification, and aided in brainstorming our models.
+- Brandon Reponte: Writer/Coder: Implemented the 3rd model, K-nearest neighbors, for image classification, and aided in brainstorming our models.
 
 - Esther Cho: Writer/Coder: wrote and coded the Data Exploration part with visuals, helped debug model 2, wrote discussion 
 
-- Vanessa Hu: Worked on model 1 evaluation, wrote the conclusion
+- Vanessa Hu: Writer/Coder: Worked on model 1 evaluation, wrote the conclusion
 
-- Jared Simpauco: Worked on introduction, helped debug model 2, and helped debug data exploration
+- Jared Simpauco: Writer/Coder: Worked on introduction, helped debug model 2, and helped debug data exploration
 
 
 <hr><hr><hr>
