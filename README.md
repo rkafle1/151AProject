@@ -14,7 +14,7 @@ The RealWaste dataset comprises images of waste items collected from the Whyte's
 
 The main goal was seeing what images we had and what their layout/size was. We first began by plotting the image sizes. Then we looked into the color distribution of different categories of trash the data set provided. Additionally, we looked into the number of images per each trash type. 
 
-We also looked into whether their were any outliers in image size and label consistency. 
+We also looked into whether there were any outliers in image size and label consistency. 
 
 Our final step was displaying some randomly chosen images from each trash category and displaying them.
 
@@ -65,7 +65,7 @@ We then trained our model with the training data set for 1 epoch and batch size 
 To test the model, we predicted the testing data and thresholded values to account for the one hot encoding. We then compared the predicted and actual for both the training and testing data. This gave us an accuracy and a sense of whether our model overfit or underfit. 
 
 
-### Model 2 Convolutional Neural Network on RGB
+### Model 2 Deep Neural Network on RGB
 <a target="_blank" href="https://colab.research.google.com/drive/11Fny_6xKCY2_ddIDxwC6iGdPsJowVTVW?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
@@ -110,43 +110,37 @@ The model was trained using the training set and validated using the validation 
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-Our K-nearest neighbors model examines the RGB distances for each pixel. This model allows us to group images that have similar features and classify them as one of the three trash types. For the model, we preprocess image input into a flattened one-dimensional vector containing each original pixel's respective RGB values, so the dataframe contains observations of our images in which the features are these pixel values. The images will be classified based on the composition of RGB values, with images of similar colors being more related. Our chosen parameter was k=11 neighbors as observed from multiple trials with different k values. In order to find a good k value, we ran multiple trials on the testing set to find the best accuracy of the first 30 k values.
+Our K-nearest neighbors model examines the RGB distances for each pixel. For the model, we preprocess image input into a flattened one-dimensional vector containing each original pixel's respective RGB values, so the dataframe contains observations of our images in which the features are these pixel values. The images will be classified based on the composition of RGB values. Our chosen parameter was k=11 neighbors as observed from multiple trials with different k values. In order to find a good k value, we ran multiple trials on the testing set to find the best accuracy of the first 30 k values.
+
+#### Trials on testing set:
+We plotted the accuracy for each value of k on a line graph, with the value of k as the x-axis and the accuracy on the y-axis.
+![image](images/knnoptimal.png)
 
 
 ## Results
-This will include the results from the methods listed above (C). You will have figures here about your results as well.
-No exploration of results is done here. This is mainly just a summary of your results. The sub-sections will be the same as the sections in your methods section.
 
 ### Data Exploration
 The dataset is composed of the following labels and image counts:
 
-Cardboard: 461
-
-Food Organics: 411
-
-Glass: 420
-
-Metal: 790
-
-Miscellaneous Trash: 495
-
-Paper: 500
-
-Plastic: 921
-
-Textile Trash: 318
-
-Vegetation: 436
+- Cardboard: 461
+- Food Organics: 411
+- Glass: 420
+- Metal: 790
+- Miscellaneous Trash: 495
+- Paper: 500
+- Plastic: 921
+- Textile Trash: 318
+- Vegetation: 436
 
 This is displayed in this figure:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/images/1numpics.png)
+![image](images/1numpics.png)
 
 The x-axis represents the types of waste that we have images of. The y-axis is the count of the amount of pictures that are categorized as that type of trash.
 
 This was our results for the plotting the image sizes:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/images/1imagesize.png)
+![image](images/1imagesize.png)
 
 In the above visualization, we have the image size’s width as the x-axis and its height as the y-axis.
 
@@ -154,7 +148,7 @@ Clearly, the image sizes are uniform.
 
 For the color distribution among different trash categories this is what we found:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/images/1colordist.png)
+![image](images/1colordist.png)
 
 Our line graphs plots the RGB value of the image on the x-axis and its respective normalized frequency on the y-axis.
 
@@ -168,38 +162,164 @@ Overall, the data sizes are uniform and there is a good amount of images per cat
 
 For each category we displayed some of the images as shown by this example:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/images/1imagegrid.png)
+![image](images/1imagegrid.png)
 
 Refer to our notebook to see the whole figure.
 
 ### Preprocessing
 Once we grouped the data as recycle, compost, and landfill we graphed the number of images per category. We used a bar graph with the the type of waste as the x-axis and the number of pictures as the y-axis, and got the following graph:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/images/2_3_type_wastes_counts.png)
+![image](images/2_3_type_wastes_counts.png)
 
 As seen in the figure, there are a lot more images that are recycling compared to the number of images for other categories.
 
 This is what a sized down greyscale image looks like:
 
-![image](https://github.com/rkafle1/151AProject/blob/main/images/2greyscalesd.png)
-### Model 1 Convolutional Neural Network on Grayscale
-![image](images/1confusion.png)
+![image](images/2greyscalesd.png)
 
-### Model 2 Convolutional Neural Network on RGB
-![image](images/2confusion.png)
+### Model 1 Convolutional Neural Network on Grayscale
+
+Our model achieved an accuracy score of ~65%, which may seem better than randomly guessing. Upon futher examination, however, all the images are being classified as recycle, which is essentially random guessing. The reason why it isn't 33% (as there are 3 categories) is because there is a significantly larger number of recycle data compared to the compost and landfill.
+
+```
+train report:
+               precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00       666
+           1       1.00      0.00      0.00       653
+           2       0.65      1.00      0.79      2482
+
+   micro avg       0.65      0.65      0.65      3801
+   macro avg       0.88      0.33      0.26      3801
+weighted avg       0.77      0.65      0.52      3801
+ samples avg       0.65      0.65      0.65      3801
+
+test report:
+               precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00       181
+           1       1.00      0.00      0.00       160
+           2       0.64      1.00      0.78       610
+
+   micro avg       0.64      0.64      0.64       951
+   macro avg       0.88      0.33      0.26       951
+weighted avg       0.77      0.64      0.50       951
+ samples avg       0.64      0.64      0.64       951
+
+train accuracy: 0.6529860563009734
+test accuracy: 0.6414300736067298
+```
+#### Training results:
+![image](images/1confusion0.png)
+
+#### Testing results:
+![image](images/1confusion1.png)
+
+### Model 2 Deep Neural Network on RGB
+The 2nd model had an accuracy of about 64% for testing accuracy and a 65% accuracy in predicting the training data. For the validation sample, it had an accuracy of about 66% in predicting the validation targets. Given that the accuracy of the testing dataset is slightly less than the accuracy of the training and validation dataset, this suggests that the model slightly overfits.
+
+From the DNN on RGB, we have an average accuracy of ~65%, we run into the same problem as model 1 for model 2, in which everything is being classified as recycle.
+
+```
+train report:
+               precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00       755
+           1       1.00      0.00      0.00       739
+           2       0.65      1.00      0.79      2782
+
+   micro avg       0.65      0.65      0.65      4276
+   macro avg       0.88      0.33      0.26      4276
+weighted avg       0.77      0.65      0.51      4276
+ samples avg       0.65      0.65      0.65      4276
+
+test report:
+               precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00        46
+           1       1.00      0.00      0.00        40
+           2       0.64      1.00      0.78       152
+
+   micro avg       0.64      0.64      0.64       238
+   macro avg       0.88      0.33      0.26       238
+weighted avg       0.77      0.64      0.50       238
+ samples avg       0.64      0.64      0.64       238
+
+validation report:
+               precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00        46
+           1       1.00      0.00      0.00        34
+           2       0.66      1.00      0.80       158
+
+   micro avg       0.66      0.66      0.66       238
+   macro avg       0.89      0.33      0.27       238
+weighted avg       0.78      0.66      0.53       238
+ samples avg       0.66      0.66      0.66       238
+
+train accuracy: 0.6506080449017774
+test accuracy: 0.6386554621848739
+validation accuracy: 0.6638655462184874
+train logloss: 5.570141314261015
+test logloss: 5.760693990080671
+validation logloss: 5.358785123685643
+```
+#### Training results:
+![image](images/2confusion0.png)
+
+#### Testing results:
+![image](images/2confusion1.png)
+
+#### Validation results:
+![image](images/2confusion2.png)
 
 ### Model 3 K-Nearest Neighbors
-Our model performed with an accuracy of 70% on the testing set and 69% on the validation set with k=11 neighbors.
-#### Trials on testing set:
-![image](https://github.com/rkafle1/151AProject/assets/88344031/b5399723-94a3-432b-b4cd-2550f5e3794b)
+Our model performed with an accuracy of 70% on the testing set and 69% on the validation set with k=11 neighbors. This performed better than all the other models in terms of accuracy and the model was able to actually perform reasonable classification. As seen from the confusion matrices, some of the other categories are being classified correctly.
 
-We plotted the accuracy for each value of k on a line graph, with the value of k as the x-axis and the accuracy on the y-axis.
+However, there is still a problem with too much bias for recycle classification, which is likely due to the disproportionate amount of recycle data due to the other data. We attempted to oversample to reduce the significance of the recycle data, but discovering the optimal k through multiple trials resulted in k=1 which is definitely overfitting.
+
+![image](images/knnoptimal1.png)
+
+#### Training results:
+```
+              precision    recall  f1-score   support
+
+     compost       0.88      0.11      0.20       674
+    landfill       0.62      0.30      0.40       665
+     recycle       0.71      0.98      0.82      2462
+
+    accuracy                           0.71      3801
+   macro avg       0.74      0.46      0.47      3801
+weighted avg       0.72      0.71      0.64      3801
+```
+![image](images/3confusion0.png)
+
 #### Testing results:
+```
+              precision    recall  f1-score   support
 
-![image](https://github.com/rkafle1/151AProject/assets/88344031/6562151a-a943-4f89-bd37-84d0e637d572)
+     compost       0.83      0.06      0.11        82
+    landfill       0.59      0.29      0.39        80
+     recycle       0.71      0.97      0.82       314
+
+    accuracy                           0.70       476
+   macro avg       0.71      0.44      0.44       476
+weighted avg       0.71      0.70      0.62       476
+```
+![image](images/3confusion1.png)
 #### Validation results:
+```
+              precision    recall  f1-score   support
 
-![image](https://github.com/rkafle1/151AProject/assets/88344031/24242705-9bcf-4871-9373-637c848f30c7)
+     compost       0.71      0.05      0.10        91
+    landfill       0.48      0.15      0.22        68
+     recycle       0.70      0.98      0.82       316
+
+    accuracy                           0.69       475
+   macro avg       0.63      0.40      0.38       475
+weighted avg       0.67      0.69      0.59       475
+```
+![image](images/3confusion2.png)
 
 
 ## Discussion
@@ -225,7 +345,7 @@ Start with Name: Title: Contribution. If the person contributed nothing then jus
 
 ### Model Evaluation
 There were no changes made to the data, labels, and loss function as they were sufficient for our 2nd model.
-The 2nd model had an accuracy of about 62% for testing accuracy and a 65% accuracy in predicting the training data. For the validation sample, it had an accuracy of about 66% in predicting the validation targets. Given that the accuracy of the testing dataset is slightly less than the accuracy of the training and validation dataset, this suggests that the model slightly overfits. 
+The 2nd model had an accuracy of about 64% for testing accuracy and a 65% accuracy in predicting the training data. For the validation sample, it had an accuracy of about 66% in predicting the validation targets. Given that the accuracy of the testing dataset is slightly less than the accuracy of the training and validation dataset, this suggests that the model slightly overfits. 
 Compared to our first model, the testing accuracy is slightly lower than the 1st model's suggesting that the first model was slighly better at predicting the trash type. In the first model, it was found that the data didn't overfit while the second does sligthly. 
 As for error, we looked at the log loss which inicated that the test loss was larger than the training and validation loss suggesting that there is a slight overfitting going on in the model.
 ### Results of Hyper Parameter Tuning
