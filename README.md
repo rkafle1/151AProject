@@ -323,7 +323,13 @@ weighted avg       0.67      0.69      0.59       475
 
 
 ## Discussion
-This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
+In our study, we initiated our analysis with a thorough exploration of our waste dataset so we could understand the characteristics of the image sizing and labeling consistency. This would be essential to placing data into models more accurately. Additionally, we checked for category distribution to identify any potential biases that could affect our results. To capture the shape as the primary indicator for predictions for our first two models, we converted the images to grayscale. 
+	
+ We implemented the Convolutional Neural Networks (CNNs) for our first model. CNNs are particularly known for working with image data, since they have the ability to detect edges and shapes effectively. However we believe that using grayscale for the images could have made some features harder to detect, possibly leading to our lower accuracy score. In addition, our CNN model demonstrated signs of underfitting, with both training and testing accuracies hovering around 0.6. 
+	
+ For our second model, a Deep Neural Network (DNN), we kept the data, labels, and loss function consistent with the first model just to see if adding convolutional layers could help classify. Compared to our first model, the testing accuracy is slightly lower, suggesting that the first model was slightly better at predicting the trash type. Moreover, while the first model didn't overfit, the second model did slightly, as indicated by the log loss, where the test loss was larger than the training and validation loss. This suggests that there is a slight overfitting going on in the model.
+	
+ We also explored the application of the K-Nearest Neighbors (KNN) algorithm since it would allow us to evaluate the distances between each image based on pixel values and enable us to identify similarities in color and shape and group similar images together. We hypothesized that categories with similarities, such as cardboard being brown, would exhibit clustering patterns. It had the best accuracy out of our models, so we tuned the KNN model with different simulations and varying values of K to optimize its performance and enhance the accuracy of our image classification. 
 
 ## Conclusion
 For our project, we created and tested three different models. Our first two models, which utilized a convolutional neural network with grayscale images and a deep neural network with hyperparameter training, respectively, both achieved similar accuracy scores. Since the accuracy for both of these neural networks was about 0.6, we decided to use a different approach instead for our third model. This time, we used the k-nearest neighbors algorithm for our model. The algorithm used the RGB distances for each pixel to group images that have similar features together. Our reasoning behind this method was that similar images were likely to have alike colors as well. Our hypothesis proved to be correct as our third model was able to achieve a higher accuracy score of 0.7.
@@ -332,9 +338,18 @@ Overall, we believe that using k-nearest neighbors as our algorithm will generat
 
 
 ## Collaboration
-This is a statement of contribution by each member. This will be taken into consideration when making the final grade for each member in the group. Did you work as a team? was there a team leader? project manager? coding? writer? etc. Please be truthful about this as this will determine individual grades in participation. There is no job that is better than the other. If you did no code but did the entire write up and gave feedback during the steps and collaborated then you would still get full credit. If you only coded but gave feedback on the write up and other things, then you still get full credit. If you managed everyone and the deadlines and setup meetings and communicated with teaching staff only then you get full credit. Every role is important as long as you collaborated and were integral to the completion of the project. If the person did nothing. they risk getting a big fat 0. Just like in any job, if you did nothing, you have the risk of getting fired. Teamwork is one of the most important qualities in industry and academia!!!
+- Vibhuti Rajpurohit: Writer/Coder: worked on the second model and overall results, helped with final submission doc.
 
-Start with Name: Title: Contribution. If the person contributed nothing then just put in writing: Did not participate in the project.
+- Richa Kafle: Writer/Coder: Helped write readme for the milestones and helped write the models.
+
+- Brandon Reponte: Implemented the 3rd model, K-nearest neighbors, for image classification, and aided in brainstorming our models.
+
+- Esther Cho: Writer/Coder: wrote and coded the Data Exploration part with visuals, helped debug model 2, wrote discussion 
+
+- Vanessa Hu: Worked on model 1 evaluation, wrote the conclusion
+
+- Jared Simpauco: Worked on introduction, helped debug model 2, and helped debug data exploration
+
 
 <hr><hr><hr>
 
